@@ -6,9 +6,11 @@ namespace generator
     {
         static void Main(string[] args)
         {
-            Generate(new BigrammGenerator(), "bigrammData.txt");
-            Generate(new WordGenerator(), "wordsData.txt");
-            Generate(new PairWordGenerator(), "pairWordsData.txt");
+            string mainCatalogPath = "../../../../";
+
+            Generate(new BigrammGenerator(), mainCatalogPath + "bigrammData.txt");
+            Generate(new WordGenerator(), mainCatalogPath + "wordsData.txt");
+            Generate(new PairWordGenerator(), mainCatalogPath + "pairWordsData.txt");
         }
 
         static void Generate(TextGenerator generator, string pathToSave = null, int textLength = 1000)
