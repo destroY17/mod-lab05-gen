@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/CharGenerator
+/ProjCharGenerator/bin/Debug/netcoreapp3.0
+/ProjCharGenerator/obj
+/Tests/bin/Debug/netcoreapp3.1
+/Tests/obj
