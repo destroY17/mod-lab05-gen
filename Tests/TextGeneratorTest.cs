@@ -10,7 +10,7 @@ namespace Tests
         [TestMethod]
         public void CheckGenerateLetter()
         {
-            var alphabet = "àáâãäåæçèéêëìíîïðñòóôõö÷øùûüýþÿ";
+            var alphabet = "Ð°Ð±Ð²Ð³Ð´ÐµÐ¶Ð·Ð¸Ð¹ÐºÐ»Ð¼Ð½Ð¾Ð¿Ñ€ÑÑ‚ÑƒÑ„Ñ…Ñ†Ñ‡ÑˆÑ‰Ñ‹ÑŒÑÑŽÑ";
 
             var generator = new BigrammGenerator();
             var letter = generator.GenerateLetter();
@@ -46,9 +46,9 @@ namespace Tests
             var text = generator.GenerateText(10000);
             var probability = generator.GetProbabilities(text);
 
-            Assert.IsTrue(probability["à"] > probability["ø"]);
-            Assert.IsTrue(probability["î"] > probability["ù"]);
-            Assert.IsTrue(probability["å"] > probability["ë"]);
+            Assert.IsTrue(probability["Ð°"] > probability["Ñˆ"]);
+            Assert.IsTrue(probability["Ð¾"] > probability["Ñ‰"]);
+            Assert.IsTrue(probability["Ðµ"] > probability["Ð»"]);
         }
 
         [TestMethod]
@@ -58,9 +58,9 @@ namespace Tests
             var text = generator.GenerateText(10000);
             var probability = generator.GetProbabilities(text);
 
-            Assert.IsTrue(probability["è"] > probability["êîòîðûé"]);
-            Assert.IsTrue(probability["â"] > probability["÷åðåç"]);
-            Assert.IsTrue(probability["íå"] > probability["êòî"]);
+            Assert.IsTrue(probability["Ð¸"] > probability["ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹"]);
+            Assert.IsTrue(probability["Ð²"] > probability["Ñ‡ÐµÑ€ÐµÐ·"]);
+            Assert.IsTrue(probability["Ð½Ðµ"] > probability["ÐºÑ‚Ð¾"]);
         }
 
         [TestMethod]
@@ -70,9 +70,9 @@ namespace Tests
             var text = generator.GenerateText(10000);
             var probability = generator.GetProbabilities(text);
 
-            Assert.IsTrue(probability["è íå"] > probability["íåñìîòðÿ íà"]);
-            Assert.IsTrue(probability["è â"] > probability["÷òî è"]);
-            Assert.IsTrue(probability["ïîòîìó ÷òî"] > probability["÷òî è"]);
+            Assert.IsTrue(probability["Ð¸ Ð½Ðµ"] > probability["Ð½ÐµÑÐ¼Ð¾Ñ‚Ñ€Ñ Ð½Ð°"]);
+            Assert.IsTrue(probability["Ð¸ Ð²"] > probability["Ñ‡Ñ‚Ð¾ Ð¸"]);
+            Assert.IsTrue(probability["Ð¿Ð¾Ñ‚Ð¾Ð¼Ñƒ Ñ‡Ñ‚Ð¾"] > probability["Ñ‚Ð°ÐºÐ¸Ð¼ Ð¾Ð±Ñ€Ð°Ð·Ð¾Ð¼"]);
         }
     }
 }
